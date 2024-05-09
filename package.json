@@ -1,0 +1,10 @@
+{
+  "name": "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummyLuiz",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.0",
+    "cypress": "^13.6.2"
+  }
+}
