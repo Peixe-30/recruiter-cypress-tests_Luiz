@@ -31,7 +31,7 @@ it('Campo senha em branco', () => {
     login_page.clickButtonAce_conta()
 });
 
-it('senha com no minimo 6 caracteres', () => {
+it('Senha com no minimo 6 caracteres', () => {
     login_page.preencherLogin('luiz4ugu2to@gmail.com', randomPassword2())
     login_page.clickButtonAce_conta()
 });
