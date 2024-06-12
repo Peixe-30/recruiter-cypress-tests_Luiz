@@ -85,7 +85,7 @@ it('Campo senha limite min caracteres', () => {
 });
 
 
-it.only('Cadastro com email em uso', () => {
+it('Cadastro com email em uso', () => {
     cadastro_page.preencherCadastro1(randomFirstname(), randomLastname(), 'luiz4ugu2to@gmail.com', randomPhone())
     cadastro_page.clickContinuar()
     cadastro_page.validaMensagem2('VOLTAR')
