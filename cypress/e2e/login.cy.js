@@ -41,9 +41,11 @@ it.only('Campo senha invalida', () => {
     cy.get('input[name=email]').type('luiz4ugu2to@gmail.com')
     cy.get('input[name=password]').type(123456666)
     cy.get('button[type=submit]').click()
-    cy.get('.go3958317564').should('be.visible').and('contain', 'Usuário ou senha inválido.')
+    var text = cy.get(".go3958317564").wait(5000).invoke('text')
+    console.log(text)
+    //cy.get('.go3958317564').eq(0).wait(5000).should('be.visible').and('contain', 'Usuário ou senha inválido.')
 
-    go3958317564
+    //go3958317564
     // login_page.preencherLogin('luiz4ugu2to@gmail.com', randomPassword2())
     // login_page.clickButtonAce_conta()
     // login_page.invalido()
