@@ -1,0 +1,13 @@
+name: Cypress Luiz 
+on: [push]
+
+jobs:
+  cypress-electron-tests:
+    runs-on: unbut-latest
+    steps: 
+      - name: Get code
+        uses: actions/checkout@v4.1.7
+      - name: install dependencies
+        run: yarn install
+      - name: Run E2E tests
+        run: yarn cypress run
