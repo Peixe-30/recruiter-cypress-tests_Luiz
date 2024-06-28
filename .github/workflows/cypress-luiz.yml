@@ -1,17 +1,34 @@
-name: Cypress Luiz 
-on: [push]
+name: Recruiter Tests
+
+on: 
+  workflow_dispatch:
+    inputs:
+      cli:
+        description: Run by cypress command line
+        default: yarn cypress run
 
 jobs:
-  cypress-electron-tests:
-    runs-on: unbut-latest
-    steps: 
-      - name: Get code
-        uses: actions/checkout@v4.1.7
+  cypress-electron-testes:
+    runs-on: ubuntu-latest
+    steps:
+      
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: install dependencies
+
+      
+      - name: Install Yarn
+        run: npm install -g yarn
+
+      
+      - name: Install dependencies
         run: yarn install
-      - name: Run E2E tests
-        run: yarn cypress run
+
+      
+      - name: Fix Cypress permissions
+        run: chmod +x ./node_modules/.bin/cypress
