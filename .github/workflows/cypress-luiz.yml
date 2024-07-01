@@ -1,47 +1,16 @@
-name: Recruiter Tests
-
-on: 
-  workflow_dispatch:
-    inputs:
-      cli:
-        description: Run by cypress command line
-        default: yarn cypress run
-
+name: Cypress tests
+on: [push]
 jobs:
-  cypress-electron-testes:
-    runs-on: ubuntu-latest
+  cypress-electron-tests:
+    runs-on: unbut-latest
     steps:
-      
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      
-      - name: Install Yarn
-        run: npm install -g yarn
-
-      
+      - name: Get code
+        uses: actions/checkout@v4.1.7
       - name: Install dependencies
         run: yarn install
-
-      
-      - name: Fix Cypress permissions
-        run: chmod +x ./node_modules/.bin/cypress
       - name: Run E2E tests
-        run: ${{github.event.inputs.cli}}
+        run: yarn cypress run
 
-      
-      - name: Run E2E tests
-        run: yarn run cy:test --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
-
-      
-      - name: Upload test artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: cypress-reports
-          path: cypress/reports/*.json
+        
+    
+  
