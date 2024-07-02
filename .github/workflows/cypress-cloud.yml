@@ -18,9 +18,10 @@ jobs:
           browser: electron 
           record: true 
           group: UI Electron 
-          spec: ${{ github.event.inputs.espc }}
+          spec: ${{ github.event.inputs.spec }}
         env:
           CYPRESS_RECORD_KEY: bb759133-955e-409f-8789-4d9aa8b33342
-          GITHUB_TOKEN: {{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
           
           
