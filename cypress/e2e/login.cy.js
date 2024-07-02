@@ -36,7 +36,7 @@ it('Senha com no minimo 6 caracteres', () => {
     login_page.clickButtonAce_conta()
 });
 
-it.only('Campo senha invalida', () => {
+it('Campo senha invalida', () => {
 
     cy.get('input[name=email]').type('luiz4ugu2to@gmail.com')
     cy.get('input[name=password]').type(123456666)
